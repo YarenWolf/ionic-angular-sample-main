@@ -1,3 +1,4 @@
+$item-option-width: 100px;
 
 .ion-content {
     --background:dodgerblue;
@@ -18,7 +19,27 @@
 }
 
 .ion-item-option::part(native) {
-    width: 100px;
+    width: $item-option-width;
     padding-left: 0;
     padding-right: 0;
+}
+
+.right-item-option-back {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: $item-option-width;
+    background-color: #5260ff;
+    z-index: -1;
+}
+
+.left-item-option-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: $item-option-width;
+    background-color: #eb445a;
+    z-index: -1;
 }

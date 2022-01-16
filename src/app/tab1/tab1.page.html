@@ -20,6 +20,7 @@
 
       <ion-item-options side="start">
         <ion-item-option color="danger" class="ion-item-option" [ngStyle]="book.customLeftStyle">
+          <div class="left-item-option-back" [ngStyle]="book.customBackLeftStyle"></div>
           <div slot="top">
             <ion-icon ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
           </div>
@@ -40,6 +41,7 @@
   
       <ion-item-options side="end">
         <ion-item-option color="tertiary" class="ion-item-option" [ngStyle]="book.customRightStyle">
+          <div class="right-item-option-back" [ngStyle]="book.customBackRightStyle"></div>
           <div slot="top">
             <ion-icon ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
           </div>
