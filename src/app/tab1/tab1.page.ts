@@ -56,22 +56,14 @@ export class Tab1Page {
 
   customWidth = 100;
 
-  // customLeftStyle = {
-  //   transform : "translate3d(80px, 0px, 0px)"
-  // }
-
-  // customRightStyle = {
-  //   transform : "translate3d(80px, 0px, 0px)"
-  // }
-
   customLeftEditStyle = {
     width: "0px",
-    // left: "-40px",
+    visibility: "hidden"
   }
 
   customRightEditStyle = {
     width: "0px",
-    // left: "40px",
+    visibility: "hidden"
   }
 
   constructor() {}
@@ -86,18 +78,22 @@ export class Tab1Page {
     if (this.isEditMode) {
       this.customLeftEditStyle= {
         width: "40px",
+        visibility: "visible"
       }
 
       this.customRightEditStyle = {
         width: "40px",
+        visibility: "visible"
       }
     } else {
       this.customLeftEditStyle = {
         width: "0px",
+        visibility: "hidden"
       }
 
       this.customRightEditStyle = {
         width: "0px",
+        visibility: "hidden"
       }
     }
   }

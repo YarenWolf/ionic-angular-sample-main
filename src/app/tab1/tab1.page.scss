@@ -55,17 +55,15 @@ $item-option-width: 100px;
 }
 
 .ion-item-left-edit {
-    width: 0px;
     background-color: darkviolet;
     position: relative;
-    transition: width .2s linear;
+    transition: width .2s, visibility .2s linear;
 }
 
 .ion-item-right-edit {
-    width: 0px;
     background-color: darkviolet;
     position: relative;
-    transition: width .2s linear;
+    transition: width .2s, visibility .2s linear;
 }
 
 .ion-item-center-edit {
