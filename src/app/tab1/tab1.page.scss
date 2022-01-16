@@ -16,6 +16,7 @@ $item-option-width: 100px;
 
 .ion-item {
     --background: transparent;
+    --inner-padding-end:0;
 }
 
 .ion-item-option::part(native) {
@@ -42,4 +43,31 @@ $item-option-width: 100px;
     width: $item-option-width;
     background-color: #eb445a;
     z-index: -1;
+}
+
+.ion-item-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    width:100%
+}
+
+.ion-item-left-edit {
+    width: 0px;
+    background-color: darkviolet;
+    position: relative;
+    transition: width .2s linear;
+}
+
+.ion-item-right-edit {
+    width: 0px;
+    background-color: darkviolet;
+    position: relative;
+    transition: width .2s linear;
+}
+
+.ion-item-center-edit {
+    width: 100%;
 }

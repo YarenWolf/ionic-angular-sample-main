@@ -9,6 +9,8 @@ export class Tab1Page {
 
   public isPopover = false;
 
+  public isEditMode = false;
+
   bookList = [
     {
       id: "1",
@@ -22,10 +24,12 @@ export class Tab1Page {
         transition: null,
       },
       customBackLeftStyle: {
-        width: "0px"
+        width: "0px",
+        transition: null
       },
       customBackRightStyle: {
-        width: "0px"
+        width: "0px",
+        transition: null
       },
     },
     {
@@ -40,31 +44,61 @@ export class Tab1Page {
         transition: null
       },
       customBackLeftStyle: {
-        width: "0px"
+        width: "0px",
+        transition: null
       },
       customBackRightStyle: {
-        width: "0px"
+        width: "0px",
+        transition: null
       },
     }
   ]
 
   customWidth = 100;
 
-  customLeftStyle = {
-    transform : "translate3d(80px, 0px, 0px)"
+  // customLeftStyle = {
+  //   transform : "translate3d(80px, 0px, 0px)"
+  // }
+
+  // customRightStyle = {
+  //   transform : "translate3d(80px, 0px, 0px)"
+  // }
+
+  customLeftEditStyle = {
+    width: "0px",
+    // left: "-40px",
   }
 
-  customRightStyle = {
-    transform : "translate3d(80px, 0px, 0px)"
+  customRightEditStyle = {
+    width: "0px",
+    // left: "40px",
   }
 
   constructor() {}
 
-  openPopover() {
-    if (this.isPopover) {
-      this.isPopover = false;
+  edit() {
+    // if (this.isPopover) {
+    //   this.isPopover = false;
+    // } else {
+    //   this.isPopover = true;
+    // }
+    this.isEditMode = !this.isEditMode;
+    if (this.isEditMode) {
+      this.customLeftEditStyle= {
+        width: "40px",
+      }
+
+      this.customRightEditStyle = {
+        width: "40px",
+      }
     } else {
-      this.isPopover = true;
+      this.customLeftEditStyle = {
+        width: "0px",
+      }
+
+      this.customRightEditStyle = {
+        width: "0px",
+      }
     }
   }
 
@@ -81,14 +115,16 @@ export class Tab1Page {
     e.currentTarget.close();
     this.bookList[i].customRightStyle.transform = `translate3d(${this.customWidth}px, 0px, 0px)`;
     this.bookList[i].customLeftStyle.transform = `translate3d(-${this.customWidth}px, 0px, 0px)`;
-    this.bookList[i].customRightStyle.transition = 'transform .6s';
-    this.bookList[i].customLeftStyle.transition = 'transform .6s';
+    this.bookList[i].customRightStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
+    this.bookList[i].customLeftStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
   }
 
   onDrag(e, i) {
 
     this.bookList[i].customRightStyle.transition = null;
     this.bookList[i].customLeftStyle.transition = null;
+    this.bookList[i].customBackLeftStyle.transition = null;
+    this.bookList[i].customBackRightStyle.transition = null;
 
     e.target.getOpenAmount().then(data => {
       
@@ -117,6 +153,8 @@ export class Tab1Page {
   onItemSlidingTouchEnd(e, i) {
     this.bookList[i].customRightStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
     this.bookList[i].customLeftStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
+    this.bookList[i].customBackLeftStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
+    this.bookList[i].customBackRightStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
 
     e.currentTarget.getOpenAmount().then(data => {
       if (Math.abs(data) <= this.customWidth/2) {

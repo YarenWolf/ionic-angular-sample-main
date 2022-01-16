@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-label (click)="openPopover()">Open ion-popover</ion-label>
+    <ion-label (click)="edit()">Edit</ion-label>
     <ion-popover [isOpen]="isPopover" arrow="false" style="--offset-y: -35%;">
       <ng-template>
         <ion-datetime local="ja-JP" presentation="date" showDefaultTimeLabel="false"
@@ -28,15 +28,24 @@
         </ion-item-option>
       </ion-item-options>
 
-      <ion-item href="#" class="ion-item" (click)="onItemClick()">
-        <ion-label>
-          <h2>{{book.customLeftStyle.transform}}</h2>
-          <h2>{{book.customRightStyle.transform}}</h2>
-          <p>Oceanic Next has joined your network</p>
-        </ion-label>
-        <ion-note slot="end">
-          10:45 AM
-        </ion-note>
+      <ion-item class="ion-item ion-no-padding" (click)="onItemClick()">
+        <div class="ion-item-content">
+          <div class="ion-item-left-edit" [ngStyle]="customLeftEditStyle"> 
+            <ion-icon name="add-outline"></ion-icon>
+          </div>
+  
+          <div class="ion-item-center-edit">
+            <ion-label>
+              <h2>{{book.customLeftStyle.transform}}</h2>
+              <h2>{{book.customRightStyle.transform}}</h2>
+              <p>Oceanic Next has joined your network</p>
+            </ion-label>
+          </div>
+  
+          <div class="ion-item-right-edit" [ngStyle]="customRightEditStyle"> 
+            <ion-icon name="add-outline"></ion-icon>
+          </div>
+        </div>
       </ion-item>
   
       <ion-item-options side="end">
