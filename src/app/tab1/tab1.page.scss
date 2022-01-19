@@ -77,6 +77,11 @@ $item-option-width: 100px;
     // &right {
 
     // }
+    
+}
+
+.left {
+    transition: transform .5s linear;
 }
 
 .ion-item-left-edit {

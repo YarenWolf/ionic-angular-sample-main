@@ -66,6 +66,10 @@ export class Tab1Page {
     // visibility: "hidden"
   }
 
+  customLeftEditBtnStyle = {
+    transform: "translate3d(-70px, 0px, 0px)"
+  }
+
   constructor() {}
 
   edit() {
@@ -85,6 +89,10 @@ export class Tab1Page {
         width: "70px",
         // visibility: "visible"
       }
+
+      this.customLeftEditBtnStyle = {
+        transform: "translate3d(0px, 0px, 0px)"
+      }
     } else {
       this.customLeftEditStyle = {
         width: "0px",
@@ -94,6 +102,10 @@ export class Tab1Page {
       this.customRightEditStyle = {
         width: "0px",
         // visibility: "hidden"
+      }
+
+      this.customLeftEditBtnStyle = {
+        transform: "translate3d(-70px, 0px, 0px)"
       }
     }
   }
