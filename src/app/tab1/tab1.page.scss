@@ -50,22 +50,61 @@ $item-option-width: 100px;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: stretch;
     width:100%
 }
 
-.ion-item-left-edit {
-    background-color: darkviolet;
-    position: relative;
-    transition: width .2s, visibility .2s linear;
-}
-
-.ion-item-right-edit {
-    background-color: darkviolet;
-    position: relative;
-    transition: width .2s, visibility .2s linear;
+.ion-item-edit-container {
+    width: 0px;
+    flex: none;
+    transition: width .5s linear;
 }
 
 .ion-item-center-edit {
-    width: 100%;
+    padding: 8px;
+    flex: auto;
+    overflow: hidden;
+}
+
+.ion-item-edit-btn {
+    width: 70px; 
+    height: 100%; 
+    position: relative;
+    // &left {
+
+    // }
+
+    // &right {
+
+    // }
+}
+
+.ion-item-left-edit {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 11px;
+    transition: width .5s, visibility .5s linear;
+    border-right: 1px solid rgba(240, 231, 231, 0.5);
+}
+
+.ion-item-right-edit {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    background-color: transparent;
+    font-size: 11px;
+    transition: width .5s, visibility .5s linear;
+    border-left: 1px solid rgba(240, 231, 231, 0.5);
+}
+
+.edit-icon {
+    font-size: 24px;
 }

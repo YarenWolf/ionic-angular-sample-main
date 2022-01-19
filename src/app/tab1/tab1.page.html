@@ -30,8 +30,14 @@
 
       <ion-item class="ion-item ion-no-padding" (click)="onItemClick()">
         <div class="ion-item-content">
-          <div class="ion-item-left-edit" [ngStyle]="customLeftEditStyle"> 
-            <ion-icon name="add-outline"></ion-icon>
+
+          <div class="ion-item-edit-container" [ngStyle]="customLeftEditStyle">
+            <div class="ion-item-edit-btn">
+              <div class="ion-item-left-edit"> 
+                <ion-icon name="copy-outline" class="edit-icon"></ion-icon>
+                コーピ
+              </div>
+            </div>
           </div>
   
           <div class="ion-item-center-edit">
@@ -42,8 +48,13 @@
             </ion-label>
           </div>
   
-          <div class="ion-item-right-edit" [ngStyle]="customRightEditStyle"> 
-            <ion-icon name="add-outline"></ion-icon>
+          <div class="ion-item-edit-container" [ngStyle]="customRightEditStyle">
+            <div class="ion-item-edit-btn">
+              <div class="ion-item-right-edit"> 
+                <ion-icon name="trash-outline" class="edit-icon"></ion-icon>
+                削除
+              </div>
+            </div>
           </div>
         </div>
       </ion-item>

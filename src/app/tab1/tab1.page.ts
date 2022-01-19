@@ -58,12 +58,12 @@ export class Tab1Page {
 
   customLeftEditStyle = {
     width: "0px",
-    visibility: "hidden"
+    // visibility: "hidden"
   }
 
   customRightEditStyle = {
     width: "0px",
-    visibility: "hidden"
+    // visibility: "hidden"
   }
 
   constructor() {}
@@ -77,23 +77,23 @@ export class Tab1Page {
     this.isEditMode = !this.isEditMode;
     if (this.isEditMode) {
       this.customLeftEditStyle= {
-        width: "40px",
-        visibility: "visible"
+        width: "70px",
+        // visibility: "visible"
       }
 
       this.customRightEditStyle = {
-        width: "40px",
-        visibility: "visible"
+        width: "70px",
+        // visibility: "visible"
       }
     } else {
       this.customLeftEditStyle = {
         width: "0px",
-        visibility: "hidden"
+        // visibility: "hidden"
       }
 
       this.customRightEditStyle = {
         width: "0px",
-        visibility: "hidden"
+        // visibility: "hidden"
       }
     }
   }
