@@ -128,7 +128,7 @@ export class Tab1Page {
   }
 
   onDrag(e, i) {
-
+    console.log('onDrag');
     this.bookList[i].customRightStyle.transition = null;
     this.bookList[i].customLeftStyle.transition = null;
     this.bookList[i].customBackLeftStyle.transition = null;
@@ -159,6 +159,7 @@ export class Tab1Page {
   }
 
   onItemSlidingTouchEnd(e, i) {
+    console.log('onTouchEnd');
     this.bookList[i].customRightStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
     this.bookList[i].customLeftStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
     this.bookList[i].customBackLeftStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
@@ -171,6 +172,14 @@ export class Tab1Page {
       }
       console.log(data)
     })
+  }
+
+  onItemTouchEnd(e) {
+    console.log('onItemTouchEnd');
+  }
+
+  onDivTouchEnd(e) {
+    console.log('onDivTouchEnd');
   }
 
 }

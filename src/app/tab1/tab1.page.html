@@ -13,7 +13,7 @@
 <ion-content class="ion-content" [fullscreen]="true">
   <ion-list class="ion-list" lines="none">
 
-    
+    <div (touchend)="onDivTouchEnd($event);">
     <ion-item-sliding (ionDrag)="onDrag($event, i)" class="ion-item-sliding" *ngFor="let book of bookList; let i = index"
       (click)="onItemSlidingClick($event, i)" (touchend)="onItemSlidingTouchEnd($event, i);">  
 
@@ -28,7 +28,7 @@
         </ion-item-option>
       </ion-item-options>
 
-      <ion-item class="ion-item ion-no-padding" (click)="onItemClick()">
+      <ion-item class="ion-item ion-no-padding" (click)="onItemClick()" (touchend)="onItemTouchEnd($event);">
         <div class="ion-item-content">
 
           <div class="ion-item-edit-container" [ngStyle]="customLeftEditStyle">
@@ -69,7 +69,7 @@
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-
+  </div>
   </ion-list>
 
 </ion-content>
