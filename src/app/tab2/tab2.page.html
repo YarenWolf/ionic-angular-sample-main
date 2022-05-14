@@ -1,31 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <div slot="" class="title-wrapper">
+      <div class="main">
+        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back"></ion-back-button>
+        <!-- <ion-icon name="chevron-back" class="back"></ion-icon> -->
+        main titlemain titlemain titlemain titlemain titlemain titlemain titlemain titlemain titlemain titlemain title
+      </div>
+      <div class="sub">
+        <span>sub titlesub titlesub titlesub titlesub titlesub titlesub titlesub title</span>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
-
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>
-        Sliding Item, Icons Bottom
-      </ion-label>
-    </ion-item>
-    <ion-item-options>
-      <ion-item-option color="primary">
-        <ion-icon slot="bottom" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        More
-      </ion-item-option>
-      <ion-item-option color="secondary">
-        <ion-icon slot="bottom" name="archive"></ion-icon>
-        Archive
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
+  
+  <ion-list>
+    <ng-container *ngFor="let item of listData">
+      <ion-item>
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
 
 </ion-content>

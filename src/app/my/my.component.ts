@@ -1,12 +1,14 @@
-import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, TemplateRef, ViewChild } from '@angular/core';
 import { GestureController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-my',
+  templateUrl: './my.component.html',
+  styleUrls: ['./my.component.scss']
 })
-export class Tab3Page {
+export class MyComponent {
+
+  @Output() onDrag = new EventEmitter();
 
   private backgrounds: string[] = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
   private currentColor: string = 'rgba(0, 0, 255, 0.5)';
@@ -19,15 +21,14 @@ export class Tab3Page {
   }
 
   ngOnInit() {
-    console.log(this.el.nativeElement);
-    console.log(this.el.nativeElement.querySelector('.rectangle'));
+
     this.tpl = this.el.nativeElement.querySelector('.rectangle')
     const gesture = this.gestureCtrl.create({
       el: this.tpl,
       threshold: 0,
-      onStart: () => this.onStart(),
-      onMove: () => this.onMove(),
-      onEnd: () => this.onEnd(),
+      onStart: () => { this.onStart(); },
+      onMove: () => { this.onMove(); },
+      onEnd: () => { this.onEnd(); },
       gestureName: ''
     });
 
@@ -52,24 +53,13 @@ export class Tab3Page {
   }
 
   private onEnd() {
-    for (let i=0; i<1000; i++) {
+    for (let i=0; i<10000000; i++) {
       let m = i + 1 /0.5 * 0.5;
       for (let j=0; j<10000000; j++) {
         let n = j + i /5 + 3000 *0.2;
       }
     }
     console.log('onEnd')
-  }
-
-  touchStart(e) {
-    console.log('touchStart')
-  }
-
-  touchEnd(e) {
-    console.log('touchEnd')
-  }
-  touchContentEnd(e) {
-    console.log('touchContentEnd')
   }
 
   private getRandomBackground() {

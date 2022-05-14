@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" (touchend)="touchContentEnd($event)">
 
   <div class="rectangle" (touchstart)="touchStart($event)" (touchend)="touchEnd($event)">
     Double click me to change the color

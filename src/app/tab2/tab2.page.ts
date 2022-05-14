@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  listData = [...Array(100).keys()];
+
   constructor() {}
 
 }
+

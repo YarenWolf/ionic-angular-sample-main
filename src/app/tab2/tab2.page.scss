@@ -1,0 +1,54 @@
+ion-toolbar {
+    --background: blue;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+}
+
+@mixin text-overflow-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.title-wrapper {
+    // min-height: 100px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .main {
+        text-align: center;
+        font-size: 1rem;
+        line-height: calc(1rem + 20px);
+
+        display: block;
+        width: 100%;
+        @include text-overflow-ellipsis;
+
+        .back {
+            position: absolute;
+            left: 0px;
+            margin-left: 5px;
+            margin-right: 5px;
+            height: calc(1rem + 20px);
+            width: 20px;
+            --icon-font-size: 20px;
+            --color: black;
+        };
+    }
+
+    .sub {
+        text-align: center;
+        @include text-overflow-ellipsis;
+        span {
+            padding: 0 4px;
+            font-size: 1rem;
+            line-height: calc(1rem + 4px);
+            background: rgba($color: #fff, $alpha: 0.2);
+        }
+    }
+}

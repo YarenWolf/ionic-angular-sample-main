@@ -140,10 +140,15 @@ export class Tab1Page {
 
         if (Math.abs(data) <= this.customWidth) {
           if (ratio > 0) {
-            // item.setCssStyle("transform", "translate3d(-144px, 0px, 0px)")
             this.bookList[i].customRightStyle.transform = `translate3d(${this.customWidth-data}px, 0px, 0px)`;
           } else if (ratio < 0) {
             this.bookList[i].customLeftStyle.transform = `translate3d(-${this.customWidth+data}px, 0px, 0px)`;
+          }
+        } else {
+          if (ratio > 0) {
+            this.bookList[i].customRightStyle.transform = `translate3d(0px, 0px, 0px)`;
+          } else if (ratio < 0) {
+            this.bookList[i].customLeftStyle.transform = `translate3d(0px, 0px, 0px)`;
           }
         }
 
@@ -160,10 +165,6 @@ export class Tab1Page {
 
   onItemSlidingTouchEnd(e, i) {
     console.log('onTouchEnd');
-    this.bookList[i].customRightStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
-    this.bookList[i].customLeftStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
-    this.bookList[i].customBackLeftStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
-    this.bookList[i].customBackRightStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
 
     e.currentTarget.getOpenAmount().then(data => {
       if (Math.abs(data) <= this.customWidth/2) {
@@ -172,14 +173,19 @@ export class Tab1Page {
       }
       console.log(data)
     })
+
   }
 
   onItemTouchEnd(e) {
     console.log('onItemTouchEnd');
   }
 
-  onDivTouchEnd(e) {
+  onDivTouchEnd(e, i) {
     console.log('onDivTouchEnd');
+    this.bookList[i].customRightStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
+    this.bookList[i].customLeftStyle.transition = 'transform 500ms cubic-bezier(.36, .66, .04, 1)';
+    this.bookList[i].customBackLeftStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
+    this.bookList[i].customBackRightStyle.transition = 'width 500ms cubic-bezier(.36, .66, .04, 1)';
   }
 
 }
