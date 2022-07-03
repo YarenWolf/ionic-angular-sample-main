@@ -12,7 +12,7 @@
       <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" style="visibility:hidden;"></ion-back-button>
     </ion-buttons>
   </ion-toolbar> -->
-  <app-my-header>
+  <app-my-header #header>
 
     <ion-toolbar color="primary">
       <ion-buttons slot="start" #leftBtns>
@@ -23,11 +23,9 @@
   
       <ion-buttons slot="end" #rightBtns>
         <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" ></ion-back-button>
-        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" ></ion-back-button>
-        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" ></ion-back-button>
+        <ion-button class="back" (click)="logEvent($event)">go</ion-button>
       </ion-buttons>
     </ion-toolbar>
-    
   </app-my-header>
 </ion-header> 
 

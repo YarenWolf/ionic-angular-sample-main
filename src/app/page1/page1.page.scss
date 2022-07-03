@@ -9,6 +9,10 @@ ion-toolbar {
         align-self: flex-start;
         max-height: 1.5rem;
         min-height: 1.5rem;
+
+        ion-button {
+            font-size: 0.9rem;
+        }
     }
 
     ion-back-button {
