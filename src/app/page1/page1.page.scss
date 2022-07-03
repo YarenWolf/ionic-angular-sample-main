@@ -1,0 +1,37 @@
+ion-toolbar {
+    --padding-top: 10px;
+    --padding-bottom: 15px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --min-height: 1.5rem;
+
+    ion-buttons {
+        align-self: flex-start;
+        max-height: 1.5rem;
+        min-height: 1.5rem;
+    }
+
+    ion-back-button {
+        &.back::part(icon) {
+            margin-left: 10px;
+            margin-right: 5px;
+            height: 24px;
+            width: 24px;
+        }
+    }
+}
+
+.title-container {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 700;
+    overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	word-break: break-all;
+    max-height: 3rem;
+}

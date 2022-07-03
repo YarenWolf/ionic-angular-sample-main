@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <!-- <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+
+    <div class="title-container">
+      我是标题文本 
+    </div>
+
+    <ion-buttons slot="end">
+      <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" style="visibility:hidden;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar> -->
+  <app-my-header>
+
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start" #leftBtns>
+        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back"></ion-back-button>
+      </ion-buttons>
+  
+      <div class="title-container" #title>我是标题文本我是标题文本我是标题文本我是标题文本我是标题文本我是标题文本</div>
+  
+      <ion-buttons slot="end" #rightBtns>
+        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" ></ion-back-button>
+        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" ></ion-back-button>
+        <ion-back-button class="back" defaultHref="home" text="" icon="chevron-back" ></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+    
+  </app-my-header>
+</ion-header> 
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngFor="let item of listData">
+      <ion-item>
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>

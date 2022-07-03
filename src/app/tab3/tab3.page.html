@@ -1,15 +1,15 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Title Only</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" (touchend)="touchContentEnd($event)">
+<!-- <ion-content [fullscreen]="true" (touchend)="touchContentEnd($event)"> -->
+<ion-content [fullscreen]="true">
 
-  <div class="rectangle" (touchstart)="touchStart($event)" (touchend)="touchEnd($event)">
+  <!-- <div class="rectangle" (touchstart)="touchStart($event)" (touchend)="touchEnd($event)">
     Double click me to change the color
-  </div>
+  </div> -->
+  <ion-button shape="round" fill="outline" [routerLink]="['/page1']">go to page1</ion-button>
 
 </ion-content>
